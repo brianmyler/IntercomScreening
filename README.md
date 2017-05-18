@@ -5,13 +5,13 @@ Project that contains 2 tasks for the screening. The first is an array falttener
 
 
 ## Usage
-### git clone https://github.com/brianmyler/IntercomScreening.git
-### mvn clean package
-### cd target
-### java -jar intercom-screener-jar-with-dependencies.jar
+git clone https://github.com/brianmyler/IntercomScreening.git, 
+mvn clean package, 
+cd target, 
+java -jar intercom-screener-jar-with-dependencies.jar
 
 ## Tests
-To run tests use below command
-### mvn test
+To run tests use command
+mvn test
 
 
