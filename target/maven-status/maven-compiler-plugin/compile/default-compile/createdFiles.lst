@@ -1,0 +1,7 @@
+com/bm/intercomscreening/services/impl/FileServiceImpl.class
+com/bm/intercomscreening/services/FileService.class
+com/bm/intercomscreening/CustomerInvitationGenerator.class
+com/bm/intercomscreening/domain/Customer.class
+com/bm/intercomscreening/ArrayFlattener.class
+com/bm/intercomscreening/services/ProximitySearchService.class
+com/bm/intercomscreening/services/impl/ProximitySearchServiceImpl.class

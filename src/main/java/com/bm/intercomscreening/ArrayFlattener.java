@@ -24,7 +24,7 @@ public class ArrayFlattener {
 			if(currentIndex instanceof Integer){
 				flattennedList.add((Integer)currentIndex);
 			}else if (currentIndex instanceof Object[]) {
-				// In the event of heavy nesting(100 levels), recursion may exhaust the call stack, if thats important, an iterative solution may be required
+				// In the event of heavy nesting, recursion may exhaust the call stack, if thats important, an iterative solution may be required
 				flattenArray((Object[]) currentIndex, flattennedList);
             } else {
                 throw new IllegalArgumentException("The flattenArray method currently only supports the following types: Object[], Integer");
