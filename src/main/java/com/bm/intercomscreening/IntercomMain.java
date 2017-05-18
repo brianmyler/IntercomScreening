@@ -15,6 +15,20 @@ public class IntercomMain {
 	
 	public static void main(String[] args) {
 		
+		/**
+		 * Given the nested arrays below, use the ArrayFlattener.flattenArray() method to flatten
+		 [
+		 * 		1, 2, 3, 4
+		 * 		[
+		 * 			11, 22, 33, 
+		 * 			[
+		 * 				111, 222, 333, 444, 555, 666
+		 * 			]
+		 * 			44, 55, 66, 
+		 * 		]
+		 * 		4, 5, 6
+		 * ]
+		 */
 		System.out.println("******************Array Flattener *********************");
 		System.out.println("");
 		ArrayFlattener af = new ArrayFlattener();
@@ -24,6 +38,8 @@ public class IntercomMain {
 		System.out.println(Arrays.toString(flattenedList.toArray()));
 		System.out.println("");
 		System.out.println("*******************************************************");
+		
+
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");

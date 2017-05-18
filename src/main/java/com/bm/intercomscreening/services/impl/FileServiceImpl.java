@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +25,16 @@ public class FileServiceImpl implements FileService{
 		}
 		
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
+        //File file = new File(classLoader.getResource(fileName).getFile());
         ObjectMapper mapper = new ObjectMapper();
         List<Customer> customers = new ArrayList<Customer>();
         
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        
+        InputStream in = classLoader.getResourceAsStream(fileName); 
+        
+        
+        
+        try (/*BufferedReader br = new BufferedReader(new FileReader(file))*/ BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
             String line;
             while ((line = br.readLine()) != null) {
             	customers.add(mapper.readValue(line, Customer.class));

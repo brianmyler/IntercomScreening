@@ -59,16 +59,5 @@ public class CustomerInvitationGenerator {
 		
 		return invitedCustomers;
 	}
-	
-//	public static void main(String[] args) {
-//		
-//		ApplicationContext context = new AnnotationConfigApplicationContext(CustomerInvitationGenerator.class);
-//		
-//		CustomerInvitationGenerator cif = context.getBean("customerInvitationGenerator", CustomerInvitationGenerator.class);
-//		
-//		for(Customer c : cif.generateCustomerInvitations(KILOMETRE_RANGE)){
-//			System.out.println("USER ID: "+c.getUser_id()+" NAME: "+c.getName());
-//		}
-//	}
 
 }

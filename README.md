@@ -5,7 +5,13 @@ Project that contains 2 tasks for the screening. The first is an array falttener
 
 
 ## Usage
-To run the array flattener task, run ArrayFlattener.java
-To run the Customer invitation generator, run CustomerInvitationGenerator.java
+git clone https://github.com/brianmyler/IntercomScreening.git
+mvn clean package
+cd target
+java -jar intercom-screener-jar-with-dependencies.jar
+
+## Tests
+To run tests use below command
+mvn test
 
 
