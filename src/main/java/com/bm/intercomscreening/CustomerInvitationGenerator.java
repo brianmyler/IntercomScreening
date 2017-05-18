@@ -29,7 +29,6 @@ public class CustomerInvitationGenerator {
 	
 	private final FileService fileService;
 	
-	private static final Integer KILOMETRE_RANGE =100;
 	private static final Double INTERCOM_HQ_LONGITUDE = -6.2576841;
 	private static final Double INTERCOM_HQ_LATITUDE =53.3393;
 	private static final String INTERCOM_CUSTOMERS_FILE_NAME ="customers.txt";
@@ -61,15 +60,15 @@ public class CustomerInvitationGenerator {
 		return invitedCustomers;
 	}
 	
-	public static void main(String[] args) {
-		
-		ApplicationContext context = new AnnotationConfigApplicationContext(CustomerInvitationGenerator.class);
-		
-		CustomerInvitationGenerator cif = context.getBean("customerInvitationGenerator", CustomerInvitationGenerator.class);
-		
-		for(Customer c : cif.generateCustomerInvitations(KILOMETRE_RANGE)){
-			System.out.println("USER ID: "+c.getUser_id()+" NAME: "+c.getName());
-		}
-	}
+//	public static void main(String[] args) {
+//		
+//		ApplicationContext context = new AnnotationConfigApplicationContext(CustomerInvitationGenerator.class);
+//		
+//		CustomerInvitationGenerator cif = context.getBean("customerInvitationGenerator", CustomerInvitationGenerator.class);
+//		
+//		for(Customer c : cif.generateCustomerInvitations(KILOMETRE_RANGE)){
+//			System.out.println("USER ID: "+c.getUser_id()+" NAME: "+c.getName());
+//		}
+//	}
 
 }

@@ -48,13 +48,13 @@ public class ArrayFlattener {
 	 * 		4, 5, 6
 	 * ]
 	 */
-	public static void main(String[] args) {
-		
-		ArrayFlattener af = new ArrayFlattener();
-		
-		List<Integer> flattenedList = af.flattenArray(new Object[]{1, 2, 3, 4 , new Object[]{11, 22, 33, new Object[]{111, 222, 333, 444, 555, 666}, 44, 55, 66}, 5, 6}, new ArrayList<Integer>());
-		
-		System.out.println(Arrays.toString(flattenedList.toArray()));
-	}
+//	public static void main(String[] args) {
+//		
+//		ArrayFlattener af = new ArrayFlattener();
+//		
+//		List<Integer> flattenedList = af.flattenArray(new Object[]{1, 2, 3, 4 , new Object[]{11, 22, 33, new Object[]{111, 222, 333, 444, 555, 666}, 44, 55, 66}, 5, 6}, new ArrayList<Integer>());
+//		
+//		System.out.println(Arrays.toString(flattenedList.toArray()));
+//	}
 
 }
