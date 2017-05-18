@@ -2,6 +2,15 @@ package com.bm.intercomscreening.domain;
 
 public class Customer {
 
+	public Customer(){}
+			
+	public Customer(Double latitude, Integer user_id, String name, Double longitude){
+		this.latitude = latitude;
+		this.user_id = user_id;
+		this.name = name;
+		this.longitude = longitude;
+	}
+	
 	private Double latitude;
 	private Integer user_id;
 	private String name;

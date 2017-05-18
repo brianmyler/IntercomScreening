@@ -25,25 +25,35 @@ import com.bm.intercomscreening.services.ProximitySearchService;
 @ComponentScan
 public class CustomerInvitationGenerator {
 
-	@Autowired
-	ProximitySearchService proximitySearchService;
+	private final ProximitySearchService proximitySearchService;
+	
+	private final FileService fileService;
+	
+	private static final Integer KILOMETRE_RANGE =100;
+	private static final Double INTERCOM_HQ_LONGITUDE = -6.2576841;
+	private static final Double INTERCOM_HQ_LATITUDE =53.3393;
+	private static final String INTERCOM_CUSTOMERS_FILE_NAME ="customers.txt";
 	
 	@Autowired
-	FileService fileService;
+	public CustomerInvitationGenerator(FileService fileService, ProximitySearchService proximitySearchService) {
+        this.proximitySearchService = proximitySearchService;
+        this.fileService = fileService;
+    }
 	
-	private static final double INTERCOM_HQ_LONGITUDE = -6.2576841;
-	private static final double INTERCOM_HQ_LATITUDE =53.3393;
-	
-	public List<Customer> generateCustomerInvitations(Integer range){
+	public List<Customer> generateCustomerInvitations(Integer kilometerRange){
+		
+		if(kilometerRange==null){
+			return null;
+		}
 		
 		List<Customer> customers = null;
 		try {
-			customers = fileService.readFileFromResourcesAndParse("customers.txt");
+			customers = fileService.readFileFromResourcesAndParse(INTERCOM_CUSTOMERS_FILE_NAME);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		List<Customer> invitedCustomers = proximitySearchService.findCustomersWithinARange(INTERCOM_HQ_LONGITUDE,INTERCOM_HQ_LATITUDE, customers, range);
+		List<Customer> invitedCustomers = proximitySearchService.findCustomersWithinARange(INTERCOM_HQ_LONGITUDE,INTERCOM_HQ_LATITUDE, customers, kilometerRange);
 		
 		// Sort by id
 		Collections.sort(invitedCustomers, (a, b) -> a.getUser_id() < b.getUser_id() ? -1 : a.getUser_id() == b.getUser_id() ? 0 : 1);
@@ -57,7 +67,7 @@ public class CustomerInvitationGenerator {
 		
 		CustomerInvitationGenerator cif = context.getBean("customerInvitationGenerator", CustomerInvitationGenerator.class);
 		
-		for(Customer c : cif.generateCustomerInvitations(100)){
+		for(Customer c : cif.generateCustomerInvitations(KILOMETRE_RANGE)){
 			System.out.println("USER ID: "+c.getUser_id()+" NAME: "+c.getName());
 		}
 	}

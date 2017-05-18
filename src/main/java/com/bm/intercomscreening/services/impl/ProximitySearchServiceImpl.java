@@ -11,13 +11,17 @@ import com.bm.intercomscreening.services.ProximitySearchService;
 @Service
 public class ProximitySearchServiceImpl implements ProximitySearchService{
 
-	public List<Customer> findCustomersWithinARange(double fixedPointLongitude, double fixedPointLatitude, List<Customer> customers, Integer range){
+	public List<Customer> findCustomersWithinARange(double fixedPointLongitude, double fixedPointLatitude, List<Customer> customers, Integer kilometerRange){
+		
+		if(customers==null || kilometerRange==null){
+			return null;
+		}
 		
 		List<Customer> customersWithinRange = new ArrayList<Customer>();
 		for(Customer c : customers){
 			double distanceBetween2Points = distanceFromAGivenPoint(fixedPointLongitude, fixedPointLatitude, c.getLongitude(), c.getLatitude());
 			
-			if(distanceBetween2Points < range){
+			if(distanceBetween2Points < kilometerRange){
 				customersWithinRange.add(c);
 			}
 			
@@ -31,7 +35,7 @@ public class ProximitySearchServiceImpl implements ProximitySearchService{
 	 * Ref - https://en.wikipedia.org/wiki/Haversine_formula
 	 * 
 	 */
-	public double distanceFromAGivenPoint(double point1Longitude, double point1Latitude, double point2Longitude, double point2Latitude) {
+	private double distanceFromAGivenPoint(double point1Longitude, double point1Latitude, double point2Longitude, double point2Latitude) {
 		
 		double earthRadius = 6371.0; 
 		
