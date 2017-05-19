@@ -5,14 +5,14 @@ Project that contains 2 tasks for the screening. The first is an array falttener
 
 
 ## Usage
+Install java 8 and point JAVA_HOME to the installation  
 git clone https://github.com/brianmyler/IntercomScreening.git   
-cd IntercomScreening  
-mvn clean package  
+cd IntercomScreening   
 cd target  
 java -jar intercom-screener-jar-with-dependencies.jar
 
 ## Tests
-To run tests use command  
+To run tests make sue you are in the IntercomScreening folder and use command  
 mvn test
 
 
