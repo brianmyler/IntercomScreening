@@ -5,7 +5,7 @@ Project that contains 2 tasks for the screening. The first is an array falttener
 
 
 ## Usage
-git clone https://github.com/brianmyler/IntercomScreening.git, 
+git clone https://github.com/brianmyler/IntercomScreening.git   
 cd IntercomScreening  
 mvn clean package  
 cd target  
