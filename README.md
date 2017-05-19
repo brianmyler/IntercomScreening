@@ -10,7 +10,7 @@ cd IntercomScreening
 mvn clean package  
 cd target  
 java -jar intercom-screener-jar-with-dependencies.jar
- 
+
 ## Tests
 To run tests use command  
 mvn test
